@@ -45,7 +45,7 @@ jobs:
           context: ./musango-app
           file: ./musango-app/Dockerfile
           push: true
-          tags: previsetech/musangoexpress:1.0.0
+          tags: previsetech/musangoexpress:v1
 
   deploy-to-kubernetes:
     runs-on: arc-runner-set
