@@ -18,7 +18,8 @@ jobs:
         with:
           node-version: '24'
       - name: Install dependencies
-        run: npm install 
+        run: npm install
+        working-directory: musango-app
 
 
   containerized-deploy:
@@ -41,8 +42,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
         with:
-          context: .
-          file: ./Dockerfile
+          context: ./musango-app
+          file: ./musango-app/Dockerfile
           push: true
           tags: previsetech/musangoexpress:1.0.0
 
