@@ -1,0 +1,4 @@
+# values.yaml for arc-runner-set
+template:
+  spec:
+    serviceAccountName: runner-service-account

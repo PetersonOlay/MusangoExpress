@@ -1,0 +1,14 @@
+apiVersion: actions.github.com/v1alpha1
+kind: AutoscalingRunnerSet
+metadata:
+  name: arc-runner-set
+  namespace: arc-runners
+spec:
+  githubConfigUrl: "https://github.com/PetersonOlay/MusangoExpress"
+  githubConfigSecret:
+    secretName: "arc-runner-set-gha-rs-github-secret"
+  template:
+    spec:
+      containers:
+      - name: runner
+        image: ghcr.io/actions/actions-runner:latest
