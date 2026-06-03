@@ -24,6 +24,7 @@ jobs:
   containerized-deploy:
     runs-on: ubuntu-latest
     needs: build
+    if: github.event.pull_request.merged == true
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -48,6 +49,7 @@ jobs:
   deploy-to-kubernetes:
     runs-on: arc-runner-set
     needs: containerized-deploy
+    if: github.event.pull_request.merged == true
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
